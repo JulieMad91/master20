@@ -29,6 +29,7 @@ public class playerController : MonoBehaviour
         {
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             moveDirection *= runSpeed;
+            //Debug.Log(moveDirection);
         }
 
         moveDirection.y -= gravity * Time.deltaTime;
@@ -43,5 +44,13 @@ public class playerController : MonoBehaviour
 
         //rb.velocity = new Vector3(horizontal * runSpeed, rb.velocity.y, vertical * runSpeed);
 
+    }
+
+    private void Update()
+    {
+        if (Input.anyKey)
+        {
+            Debug.Log(Input.inputString);
+        }
     }
 }
